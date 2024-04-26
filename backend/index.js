@@ -19,9 +19,21 @@ app.get("/books", (req,res) =>{
     const q  = "select * from books";
     db.query(q, (err,data) =>{
         if(err){
-            return res.json("NO books found : ");
+            return res.json("NO books found :( ");
         }
         return res.json(data);
+    })
+})
+
+app.post("/books", (req,res) =>{
+    const q = "insert into books (title,des,cover) values (?)";
+    const values  = ["title from backend","des from backend","cover from backend"];
+
+    db.query(q,[values], (err,data) =>{
+        if(err){
+            return res.json(err);
+        }
+        return res.json("book has been created successfully!");
     })
 })
 
