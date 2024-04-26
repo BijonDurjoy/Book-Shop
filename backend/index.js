@@ -11,6 +11,7 @@ const db = mysql.createConnection({
     database: "test"
 })
 
+app.use(express.json());
 app.get("/", (req,res) =>{
     res.json("Hello this is backend!")
 })
@@ -27,7 +28,11 @@ app.get("/books", (req,res) =>{
 
 app.post("/books", (req,res) =>{
     const q = "insert into books (title,des,cover) values (?)";
-    const values  = ["title from backend","des from backend","cover from backend"];
+    const values  = [
+        req.body.title,
+        req.body.des,
+        req.body.cover,
+    ];
 
     db.query(q,[values], (err,data) =>{
         if(err){
