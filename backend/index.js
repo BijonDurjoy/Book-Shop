@@ -31,11 +31,12 @@ app.get("/books", (req,res) =>{
 })
 
 app.post("/books", (req,res) =>{
-    const q = "insert into books (title,des,cover) values (?)";
+    const q = "insert into books (title,des,cover,price) values (?)";
     const values  = [
         req.body.title,
         req.body.des,
         req.body.cover,
+        req.body.price,
     ];
 
     db.query(q,[values], (err,data) =>{
