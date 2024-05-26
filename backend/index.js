@@ -10,7 +10,7 @@ const db = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    database: "test"
+    database: "project"
 })
 
 app.use(express.json());
@@ -21,7 +21,7 @@ app.get("/", (req,res) =>{
 })
 
 app.get("/books", (req,res) =>{
-    const q  = "select * from books";
+    const q  = "select * from book";
     db.query(q, (err,data) =>{
         if(err){
             return res.json("NO books found :( ");
@@ -31,7 +31,7 @@ app.get("/books", (req,res) =>{
 })
 
 app.post("/books", (req,res) =>{
-    const q = "insert into books (title,des,cover,price) values (?)";
+    const q = "insert into book (title,des,cover,price) values (?)";
     const values  = [
         req.body.title,
         req.body.des,
