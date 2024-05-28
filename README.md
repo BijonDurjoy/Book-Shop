@@ -6,11 +6,11 @@ These instructions will get you set up and running with the project locally.
 
 ### Prerequisites
 
-- Version Control: Git
-- Code Editor: A code editor (e.g., VS Code)
-- Library: ReactJS
-- Runtime Environment: Node.js
-- Database: MySQL
+- Version Control:[Git](https://git-scm.com/)
+- Code Editor: [VS Code](https://code.visualstudio.com/)
+- Library: [ReactJs](https://react.dev/)
+- Runtime Environment: [Node.Js](https://nodejs.org/en)
+- Database: [MySQL](https://www.mysql.com/)
 
 
 ## Installation
