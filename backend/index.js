@@ -43,7 +43,19 @@ app.post("/books", (req,res) =>{
         if(err){
             return res.json(err);
         }
-        return res.json("book has been created successfully!");
+        return res.json("Book has been created successfully!");
+    })
+})
+
+app.delete("/books/:id", (req,res) =>{
+    const bookId = req.params.id;
+    const q = "delete from project where id = ?";
+
+    db.query(q,[bookId], (err,data) =>{
+        if(err){
+            return res.json(err);
+        }
+        return res.json("Book has been deleted successfully.")
     })
 })
 
