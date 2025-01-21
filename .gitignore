@@ -3,3 +3,6 @@ backend/node_modules/
 
 # Ignore node_modules in Client
 client/node_modules/
+
+
+**/node_modules/
